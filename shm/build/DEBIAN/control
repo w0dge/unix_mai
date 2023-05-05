@@ -1,0 +1,7 @@
+Package: libdbgapi
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Gleb Bokun <wodgeonixias@mail.ru>
+Depends: libc6 (>= 2.15)
+Description: Debug API library
+ This package provides the Debug API library

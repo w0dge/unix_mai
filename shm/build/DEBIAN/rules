@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# If necessary, add commands to configure the build
+
+override_dh_auto_build:
+	make -C shm
+
+override_dh_auto_install:
+	install -D -m 755 shm/libdbgapi.so debian/libdbgapi/usr/lib/x86_64-linux-gnu/libdbgapi.so
+	install -D -m 644 shm/dgb_api.h debian/libdbgapi/usr/include/dgb_api.h
+
+override_dh_auto_clean:
+	make -C shm clean
